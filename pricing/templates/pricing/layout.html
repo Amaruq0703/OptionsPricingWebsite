@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'pricing/styles.css' %}">
+    </head>
+    <body>
+        <nav>
+            <ul class="sidebar">
+                <li class="navitem" onclick=hideSidebar()>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+                </li>
+                <li class="navitem">
+                    <a href="{% url 'bsm' %}">Black Scholes Model</a>
+                </li>
+                <li class="navitem">
+                  <a href="{% url 'bino' %}">Binomial Model</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="navitem">
+                        <a href="{% url 'saved' %}">Saved Calculations</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="{% url 'logout' %}">Log Out</a>
+                    </li>
+                {% endif %}
+            </ul>
+            
+            <ul class="navlist">
+                <li class="navitem">
+                    <a href="{% url 'index' %}" id="navname">Options Pricing</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="navitem">
+                    <p id="username">{{user.email}}</p>
+                </li>
+                {% else %}
+                <li class="navitem">
+                    <p id="username"></p>
+                </li>
+                {% endif %}
+                <li onclick=showSidebar()>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+                </li>
+            </ul>
+            
+          </nav>
+        
+        {% block body %}
+        {% endblock %}
+        
+        
+        <script>
+            function showSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+
+            function hideSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+        </script>
+        {% block script %}
+        {%endblock%}
+    </body>
+</html>

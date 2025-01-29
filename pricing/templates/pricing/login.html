@@ -1,0 +1,41 @@
+{% extends "pricing/layout.html" %}
+{% load static %}
+
+{% block title%}
+Pricing | Login
+{%endblock%}
+
+
+{% block body %}
+    <div class="login-header">
+        <header>Login</header>
+    </div>
+
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="input-box">
+            <input type="text" class="input-field" placeholder="Username" name="email" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Password" name="password" autocomplete="off" required>
+        </div>
+        <div class="input-submit">
+            <button class="submit-btn" id="submit"></button>
+            <label for="submit">Sign In</label>
+        </div>
+    </form>
+
+    <div class="sign-up-link">
+        <p>Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+    </div>
+
+    {% if message %}
+    <script type="text/javascript">
+        alert('{{message}}')
+    </script>
+    {% endif %}
+{% endblock %}
+
+{% block script %}
+   
+{% endblock %}

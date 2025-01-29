@@ -1,0 +1,45 @@
+{% extends "pricing/layout.html" %}
+{% load static %}
+
+{% block title%}
+Pricing | Register
+{%endblock%}
+
+
+{% block body %}
+    <div class="login-header">
+        <header>Register</header>
+    </div>
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="input-box">
+            <input type="text" class="input-field" placeholder="Username" name="email" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Password" name="password" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Confirm Password" name="confirmation" autocomplete="off" required>
+        </div>
+        <div class="input-submit">
+            <button class="submit-btn" id="submit"></button>
+            <label for="submit">Register</label>
+        </div>
+    </form>
+    
+    <div class="sign-up-link">
+        <p>Have an account? <a href="{% url 'login' %}">Log In</a></p>
+    </div>
+
+    {% if message %}
+    <script type="text/javascript">
+        alert('{{message}}')
+    </script>
+    {% endif %}
+    
+{% endblock %}
+
+{% block script %}
+   
+{% endblock %}

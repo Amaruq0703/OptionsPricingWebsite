@@ -1,0 +1,40 @@
+{% extends "pricing/layout.html" %}
+{% load static %}
+
+{% block title%}
+Pricing
+{%endblock%}
+
+
+{% block body %}
+    {% if calcs %}
+        <div id="cardcontainer">
+            {% for calc in calcs %}
+                <div class="saved-card">
+                    <div class="saved-card-header">
+                        <p class="saved-card-name-text" style="font-size: 1.2em; font-weight: bold;">{{calc.model}}</p>
+                    </div>
+                    <div class="saved-card-body">
+                        <p class="saved-info">Stock Price: {{calc.stock}}</p>
+                        <p class="saved-info">Strike Price: {{calc.strike}}</p>
+                        <p class="saved-info">Expiry: {{calc.expiry}} days</p>
+                        <p class="saved-info">Risk Free Rate: {{calc.rfr}}</p>
+                        <p class="saved-info">Volatility: {{calc.vol}}</p>
+                        <a href="{% url 'tomodel' calc.id %}" class="saved-card-button">
+                            Go to calculation
+                        </a>
+                    </div>
+                    <div class="saved-card-footer">
+                        <p class="saved-card-time-text" style="margin-bottom: 10px;">{{calc.timestamp}}</p> 
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+            <h1>No Saved Calculations.</h1>
+    {% endif %}
+{% endblock %}
+
+{% block script %}
+   
+{% endblock %}
