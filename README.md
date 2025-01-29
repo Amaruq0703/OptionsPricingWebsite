@@ -1,5 +1,8 @@
 # README.md
 
+## Website Link
+[Options Pricing Website](https://web-production-e626a.up.railway.app/)
+
 ## Project Overview
 
 This project is a web application built using Django on the backend and JavaScript on the frontend. The application is designed to be a platform that allows users to perform complex financial calculations related to option pricing models, such as the Black-Scholes model and Binomial option pricing model. Upon pressing the 'Calculate' button, users can see the computed value of their Call and Put options based on their inputs, along with a heat map of values displaying the change in that value with change in Stock Prices and Volaility. Users can create logins to save their calculation inputs, which they can later revisit and edit. The application is mobile-responsive, ensuring a seamless user experience across devices.
@@ -30,37 +33,6 @@ Lastly, I focused on the UI of the project, adding subtle animations and hover e
 - **`saved.html`**: Includes the html for the saved calculations page, rendering the calculations in cards and buttons for users to go to the respective calculations.
 - **`static/`**: Directory containing static files like CSS, JavaScript, and svgs. The CSS files ensure the application is mobile-responsive.
 - **`templates/`**: Directory containing HTML templates used by the Django views. These templates are dynamically populated with data from the backend.
-
-### How to Run the Application
-
-1. **Clone the Repository**: Start by cloning the repository to your local machine.
-   ```bash
-   git clone https://github.com/Amaruq0703/Options-Pricing-Models.git
-   cd options_pricing
-   ```
-
-2. **Install pip and Django**: Ensure you have Python installed, then install pip and Django. If you are using Ubuntu, you can run the following command to download pip.
-   ```bash
-   sudo apt install python3-pip -y
-   ```
-   ```bash
-   pip install django
-   ```
-
-3. **Run Migrations**: Apply the database migrations to set up your database schema.
-   ```bash
-   python3 manage.py makemigrations
-   ```
-   ```bash
-   python3 manage.py migrate
-   ```
-
-4. **Start the Development Server**: Run the Django development server.
-   ```bash
-   python3 manage.py runserver
-   ```
-
-5. **Access the Application**: Open your web browser and go to `http://127.0.0.1:8000/` to access the application.
 
 ### Additional Information
 
