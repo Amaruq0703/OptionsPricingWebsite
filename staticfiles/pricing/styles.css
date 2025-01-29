@@ -1,0 +1,491 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    background: #dfdfdf;
+    width: 100%;
+    overflow: auto;
+}
+
+nav{
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 50px;
+    z-index: 998;
+}
+
+.navlist{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navitem{
+    height: 50px; 
+}
+
+nav p{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+nav li:first-child{
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+nav li:nth-child(2){
+    margin-right: auto;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+nav a:hover{
+    transform: scale(1.05, 1);
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: #00000049;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.05);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sidebar p{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.sidebar a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.sidebar a:hover{
+    transform: scale(1.05, 1);
+    text-decoration: none;
+    color: #fff;
+}
+
+.login-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 440px;
+    height: 480px;
+    padding: 30px;
+}
+
+.login-header{
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.login-header header{
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.input-box .input-field{
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: .3s;
+}
+
+::placeholder{
+    font-weight: 500;
+    color: #222;
+}
+
+
+.input-field:focus{
+    width: 105%;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.input-submit{
+    position: relative;
+}
+
+.submit-btn{
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+.input-submit label{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.submit-btn:hover{
+    background: #000;
+    transform: scale(1.05, 1);
+}
+
+.sign-up-link{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.sign-up-link a{
+    color: #000;
+    font-weight: 600;
+}
+
+.home-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeTextBig{
+    font-size: 100px;
+    font-weight: 600;
+}
+
+#homeTextSmall{
+    font-size: 50px;
+    font-weight: 500;
+}
+
+#infoHead{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.infoRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.infoButton{
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.infoButton:hover{
+    background: #000;
+    transform: scale(1.05, 1);
+}
+
+.infoRow label{
+    color: #fff;
+    cursor: pointer;
+}
+
+.pageHeader {
+    z-index: 997;
+    position: relative;
+    margin: 0 auto;
+}
+
+.formcontainer{
+    z-index: 997;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.calculate-btn {
+    z-index: inherit;
+    width: 440px;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+    margin-left: 10px;
+}
+
+
+.calculate-btn:hover{
+    background: #000;
+    transform: scale(1.05, 1);
+}
+
+.calculate-btn label{
+    z-index: inherit;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.calculation-form {
+    z-index: 997;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.calclate-input-areas {
+    z-index: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.calculate-input-box {
+    z-index: inherit;
+    width: 48%;  
+    margin-bottom: 15px;
+}
+
+.calculate-input-field{
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: .3s;
+}
+
+.calculate-input-field:focus{
+    width: 105%;
+}
+
+#resultconstainer{
+    display: none;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+    gap: 20px;
+    width: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 997;
+    
+}
+
+#callValue, #putValue{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: inherit;
+    width: 48%;
+    min-width: 300px;
+    height: 100%;
+    border: none;
+    border-radius: 30px;
+    background-color: #222;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 25px;
+}
+
+.valueText{
+    margin: 0;
+    z-index: inherit;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 450;
+}
+
+#heatmapcontainer{
+    z-index: 997;
+    display: none;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+    gap: 20px;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+#heatmapCall, #heatmapPut {
+    display: flex; /* Enable flexbox on the container */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    z-index: inherit;
+    width: 48%;
+    height: 100%;
+    padding: 10px; /* Add padding around the heatmaps */
+    background-color: #fff; /* Optional: Add a white background */
+    border: 1px solid #ccc; /* Add a subtle border for separation */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.calculate-btn:disabled {
+    background: #ccc; /* Grey background for disabled state */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+    transform: none; /* Remove hover effect */
+}
+
+.calculate-btn:disabled label {
+    cursor: not-allowed; /* Change cursor for label */
+}
+
+#cardcontainer{
+    z-index: 997;
+    position: relative;
+    width: 100%;
+    margin-bottom: auto;
+    margin-top: 50px;
+}
+
+.saved-card{
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 15px; 
+    margin: 20px; 
+    background-color: #333; 
+    color: white;
+}
+
+.saved-card-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.saved-info{
+    z-index: inherit;
+    color: #fff;
+    font-weight: 600;
+}
+
+.saved-card-button{
+    background-color: #222; 
+    border: none; 
+    border-radius: 50px; 
+    color: white; 
+    padding: 10px 20px; 
+    cursor: pointer;
+}
+
+.saved-card-button:hover{
+    background: #000;
+    transform: scale(1.05, 1);
+}
+
+@media (max-width: 768px) {
+
+    .calculate-btn {
+        margin-bottom: 10px;
+    }
+
+    #resultconstainer {
+        margin-bottom: 10px;
+    }
+    .calculate-input-box {
+        width: 100%;
+    }
+    #callValue, #putValue {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #heatmapCall, #heatmapPut {
+        width: 100%;
+    }
+    #heatmapcontainer{
+        margin-top: 85px;
+    }
+    .saved-card-body{
+        flex-direction: column;
+    }
+}
